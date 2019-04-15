@@ -149,15 +149,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-#    статические файлы будут по следующим адресам
-
-    os.path.join(BASE_DIR, "static"),
-#    'E://Pupsinator/Programming/Pyton MIT/Projects/django_1/first_project/Landing_1/templates/static',
-
-]
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, "static", "static_dev"),
+)
 
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_prod")
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
 
 
 
