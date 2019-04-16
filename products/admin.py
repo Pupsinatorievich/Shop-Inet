@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, ProductImage
+from .models import *
 # Register your models here.
 #==============================================================
 
@@ -17,6 +17,17 @@ class ProductAdmin(admin.ModelAdmin):
     class Meta:
         model = Product        
 admin.site.register(Product, ProductAdmin)  
+
+#==============================================================
+
+    
+class ProductCategoryAdmin(admin.ModelAdmin):
+
+    list_display = [fields.name for fields in ProductCategory._meta.fields]
+ 
+    class Meta:
+        model = ProductCategory        
+admin.site.register(ProductCategory, ProductCategoryAdmin) 
 
 #==============================================================
 
