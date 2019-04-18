@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, ProductInOrder, Status 
+from .models import *
 
 
 
@@ -38,7 +38,23 @@ class ProductInOrderAdmin(admin.ModelAdmin):
     class Meta:
         model = ProductInOrder
         
-admin.site.register(ProductInOrder, ProductInOrderAdmin)    
+admin.site.register(ProductInOrder, ProductInOrderAdmin)  
+
+#============================================================================
+
+class ProductInBasketAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in ProductInBasket._meta.fields]
+
+    class Meta:
+        model = ProductInBasket
+
+admin.site.register(ProductInBasket, ProductInBasketAdmin)
+
+#============================================================================
+
+
+
+  
         
         
         
